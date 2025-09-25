@@ -1,0 +1,19 @@
+@use './variaveis' as *;
+@use './carrinho';
+@use './home';
+@use './extends' as *;
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: $cor-fundo;
+    margin: 0;
+
+}
+
+header{
+    background: $cor-primaria;
+    color: white;
+    text-align: center;
+    padding: 15px;
+
+}
