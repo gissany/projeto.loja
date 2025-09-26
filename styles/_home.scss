@@ -1,5 +1,27 @@
 @use './variaveis' as *;
 
 body{
-    
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.logo{
+    font-size: 2rem;
+
+}
+
+nav{
+    margin-top: 0.5rem;
+    a{
+        color: $cor-fundo;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
 }
