@@ -17,3 +17,7 @@ header{
     padding: 15px;
 
 }
+
+footer{
+    @extend %footer-main;
+}

@@ -25,3 +25,55 @@ nav{
     }
 
 }
+
+.container{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.produtos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+
+.card{
+    background-color: $cor-fundo;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img{
+        max-width: 50%;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+    h3{
+        margin: 0.5rem;
+    }
+    p{
+        font-weight: bold;
+        color: $cor-primaria;
+    }
+    .btn-add{
+        margin-top: auto;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 8px;
+        background: $cor-primaria;
+        color: $cor-fundo;
+        cursor: pointer;
+
+        &:hover{
+            background: darken($cor-primaria, 20%);
+        }
+    }
+}
+
+}
