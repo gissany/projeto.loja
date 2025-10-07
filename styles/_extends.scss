@@ -1,3 +1,28 @@
-%footer-main{
+@use './variaveis' as *;
 
+
+%footer-main{
+    background-color: $cor-primaria;
+    color: $cor-fundo;
+    padding: 1rem;
+    margin-top: 3rem;
+    text-align: center;
+
+}
+
+%footer-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+%footer-link{
+    color: $cor-fundo;
+    text-decoration: none;
+
+    &:hover{
+        text-decoration: underline;
+    }
 }

@@ -32,7 +32,7 @@ document.addEventListener("click", (e) =>{
 
         let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
         carrinho.push(produto);
-        localStorage.setItem("carrinho", JSON.stringify(carrinho))
+        localStorage.setItem("carrinho", JSON.stringify(carrinho));
 
         //mensagem temporária
 

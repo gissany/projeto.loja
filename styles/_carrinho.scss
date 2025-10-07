@@ -1,0 +1,168 @@
+@use './variaveis' as *;
+@use './extends' as *;
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: lighten($cor-fundo, 10%);
+}
+
+header{
+    padding: 1rem;
+    background-color: $cor-primaria;
+    color: $cor-fundo;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h1{
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+}
+
+nav{
+    a{
+        color: $cor-fundo;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        text-decoration: none;
+
+    &:hover{
+        text-decoration: underline;
+    }}
+}
+
+main{
+    flex: 1;
+    min-height: 1px;
+    padding: 2rem;
+}
+
+
+.carrinho{
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: $cor-fundo;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: $cor-primaria;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+
+    li{
+        background-color: lighten($cor-fundo, 5%);
+        border: 1px solid #ddd;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .btn-remove{
+            background-color: lighten($cor-primaria, 10%);
+            color: $cor-fundo;
+            border: none;
+            padding: 0.5rem 0.8rem;
+            border-radius: 6px;
+            cursor: pointer;
+
+            &:hover{
+                background-color: darken($cor-primaria, 10%);
+            }
+
+            i{
+                pointer-events: none;
+            }
+
+        }
+    }
+}
+
+#total{
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 1rem;
+    color: $cor-primaria
+}
+
+.btn-finalizar{
+    display: block;
+    margin: 2rem auto 0;
+    padding: 0.75rem 2rem;
+    background-color: $cor-primaria;
+    color: $cor-fundo;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover{
+        background-color: darken($cor-primaria, 20%);
+    }
+    
+}
+
+.mensagem{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: $cor-primaria;
+    color: $cor-fundo;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    z-index: 1000;
+}
+
+footer{
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+
+    @extend %footer-main !optional;
+
+    
+    .footer-conteiner{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+
+        p{
+            margin: 0;
+            text-align: center;
+        }
+
+        .footer-nav{
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+
+            a{
+                @extend %footer-link;
+            }
+        }
+    }
+}

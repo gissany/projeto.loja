@@ -11,8 +11,8 @@ function atualizarCarrinho(){
 
         const li = document.createElement("li");
         li.innerHTML = `
-        &{item.nome} - R$ ${item.preco.toFixed(2)}
-        <button class= "btn-remove" data-index=${i}">
+        ${item.nome} - R$ ${item.preco.toFixed(2)}
+        <button class= "btn-remove" data-index="${i}">
         <i class="fa-solid fa-xmark"></i>
         </button>
         
@@ -26,7 +26,24 @@ function atualizarCarrinho(){
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
     
 }
+
+
 itensCarrinho.addEventListener("click", (e) =>{
-    const botao = e.target.closest("btn-remove"); //pegando o botão
-})
-atualizarCarrinho();
+    const botao = e.target.closest(".btn-remove"); //pegando o botão
+    if(botao){
+        const index = parseInt(botao.dataset.index);
+        carrinho.splice(index, 1);
+        atualizarCarrinho();
+    }
+});
+
+document.addEventListener("DOMContentLoaded", atualizarCarrinho);
+
+
+
+
+
+
+
+
+
